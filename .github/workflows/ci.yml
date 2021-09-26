@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Lighthouse
-        uses: shopify/lighthouse-ci-action@1.0
+        uses: tuktukvlad/lighthouse-ci-action@1.0
         with:
           app_id: ${{ secrets.SHOP_APP_ID }}
           app_password: ${{ secrets.SHOP_APP_PASSWORD }}
@@ -15,6 +15,7 @@ jobs:
           password: ${{ secrets.SHOP_PASSWORD }}
           lhci_github_token: ${{ secrets.LHCI_GITHUB_TOKEN }}
           lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          lhci_blocked_url_patterns: ${{ secrets.LHCI_BLOCKED_URL_PATTERNS }}
           lhci_min_score_performance : 0.5
           lhci_min_score_accessibility : 0.5
   theme-check:
